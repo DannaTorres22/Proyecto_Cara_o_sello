@@ -12,7 +12,6 @@
       
 </head>
 <body>
-    
 
       <!--contenido-->
     <div class="container">
@@ -24,14 +23,25 @@
                 <img src="../img/sello.png">
             </div>
         </div>
+        <!--contadores-->
          <div class="stats">
              <p id="cara-count">cara: 0</p>
              <p id="sello-count">sello: 0</p>
-
          </div>
-         <div class="apuesta" id="apuesta">
-            <input type="text" id="apues" placeholder="ingrese valor de la apuesta">
+         <div class="stats">
+            <p id="cant-count"># jugadas: 0</p>
+            <p id="dinero-count">dinero: 0</p>
         </div>
+
+        <!--eleccion-->
+         <div class="apuesta" id="apuesta">
+            <input type="text" id="apuest" placeholder="ingrese valor de la apuesta">
+        </div>
+            <select name="opcion" id="opcion">
+                <option value="">Seleccione el lado de la moneda</option>
+                <option id="lad" value="1">Cara</option>
+                <option id="lad" value="2">Sello</option>
+            </select>
 
         <div class="buttons">
             <button id="flip-button">
