@@ -1,10 +1,16 @@
 let cara = 0;
 let sello = 0;
-const ing= document.getElementById('ingresar');
-let cont;
+const ingresar= document.getElementById('ingresar');
+let cont=0;
+cont=cont+1;
+let total;
+let apuesta=0;
+total=total+apuesta;
 let moneda = document.querySelector(".moneda");
 let girarBtn = document.querySelector("#flip-button");
 let reinicioBtn = document.querySelector("#reinicio-button");
+
+
 
 
 girarBtn.addEventListener("click", () => {
@@ -15,6 +21,7 @@ girarBtn.addEventListener("click", () => {
             moneda.style.animation = "spin-cara 3s forwards";
         }, 100);
         cara++;
+
     }
     else{
         setTimeout(function(){
@@ -30,6 +37,9 @@ girarBtn.addEventListener("click", () => {
 function updateStats(){
     document.querySelector("#cara-count").textContent = `cara: ${cara}`;
     document.querySelector("#sello-count").textContent = `sello: ${sello}`;
+    document.querySelector("#cant-count").textContent = `jugadas: ${cont}`;
+    document.querySelector("#dinero-count").textContent = `dinero: ${total}`;
+   
 }
 
 function disableButton(){
@@ -45,43 +55,42 @@ reinicioBtn.addEventListener("click",() => {
     cara = 0;
     sello = 0;
     cont=0;
-    apuesta=0;
+    total=0;
     
     updateStats();
 });
 
-ing.addEventListener('click', ()=>{
+girarBtn.addEventListener('click', ()=>{
     let opcion = document.getElementById('opcion').value;
     opcion = parseInt(opcion);
-    let apuesta = document.getElementById('apuest').value;
+    apuesta = document.getElementById('apuest').value;
     apuesta = parseInt(apuesta);
 
-    let c = 0;
-    let confirmar = true;
-    if ( apuesta >= 1000 ) {
+    let confir = true;
+    if ( apuesta >= 100 ) {
         do {
             switch (opcion) {
                 
                 case 1:
-                    swal(`Tu valor apostado es: ${apuesta}`);
+                    swal(`Tu valor apostado es:`);
                     
                     break;
                 case 2:
-                    swal(`Tu valor apostado es: ${apuesta}`)
+                    swal(`Tu valor apostado es:`);
                     break;
             
                 default:
                     break;
             }
-             confirmar = window.confirm(`Desea seguir jugando?`)
+            confir = window.confirm(`Desea seguir jugando?`);
         
-        } while (confirmar == true){
-            swal(`Gracias por jugar`)
+        } while (confir == true){
+            swal(`Gracias por jugar`);
+            
         };
     
-    
     } else {
-        swal (`Por favor un valor mayor a 1000 `)
+        swal (`Por favor un valor mayor a 1000 `);
     }
     
     });

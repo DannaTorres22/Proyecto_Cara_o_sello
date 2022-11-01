@@ -96,7 +96,7 @@ height: 100%;
 .sello{
 transform: rotateX(180deg);
 }
-#im{
+#nombre{
     width: 27%;
     padding: 11px;
     margin: 21px 0 22px 0;
