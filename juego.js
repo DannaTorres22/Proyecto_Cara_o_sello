@@ -1,12 +1,14 @@
 let cara = 0;
 let sello = 0;
-let nombre;
+const nombre= document.getElementById('ingr');
 let dinero;
 let cont;
 let moneda = document.querySelector(".moneda");
 let girarBtn = document.querySelector("#flip-button");
 let reinicioBtn = document.querySelector("#reinicio-button");
 
+
+Swal.fire(`Bienvenid@" ${nombre}"`);
 
 girarBtn.addEventListener("click", () => {
     let i = Math.floor(Math.random() * 2);

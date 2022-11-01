@@ -36,7 +36,7 @@ perspective: 300px;
 }
 .bannerg-overlay {
 	
-	padding:220px 0px 170px;
+	padding:195px 0px 170px;
 }
 
 .bannerg h1 {
@@ -49,10 +49,10 @@ perspective: 300px;
 }
 .bannerg-btn {
     background: #e7e7e7;
-    padding: 13px 58px;
-	font-size: 15px;
-	border-radius: 30px;
-	margin-top: 30px;
+    padding: 12px 58px;
+    font-size: 16px;
+    border-radius: 30px;
+    margin-top: -15px;
 }
 .bannerg-btn:hover {
 	background: #ffffff;
@@ -92,6 +92,15 @@ height: 100%;
 }
 .sello{
 transform: rotateX(180deg);
+}
+#im{
+    width: 27%;
+    padding: 11px;
+    margin: 21px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #e7e7e7;
+    border-radius: 50px;
 }
 @keyframes spin-sello{
 0%{
