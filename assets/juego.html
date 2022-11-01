@@ -1,0 +1,46 @@
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Juego Carisellazo</title>
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+        <!--estilos-->
+        <link rel="stylesheet" href="sweetalert2.min.css">
+        <link rel="stylesheet" href="../css/juego.css">
+        
+      
+</head>
+<body>
+    
+
+      <!--contenido-->
+    <div class="container">
+        <div class="moneda" id="moneda">
+            <div class="cara">
+                <img src="../img/cara.png">
+            </div>
+            <div class="sello">
+                <img src="../img/sello.png">
+            </div>
+        </div>
+         <div class="stats">
+             <p id="cara-count">cara: 0</p>
+             <p id="sello-count">sello: 0</p>
+
+         </div>
+        <div class="buttons">
+            <button id="flip-button">
+               girar moneda
+            </button>
+            <button id="reinicio-button">
+                Reinicio
+            </button>
+        </div>
+    </div>
+
+    <script src="../juego.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
