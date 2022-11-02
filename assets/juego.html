@@ -14,6 +14,7 @@
 <body>
 
       <!--contenido-->
+
     <div class="container">
         <div class="moneda" id="moneda">
             <div class="cara">
@@ -29,18 +30,19 @@
              <p id="sello-count">sello: 0</p>
          </div>
          <div class="stats">
-            <p id="cant-count"># jugadas: 0</p>
+            <p id="cant-count">jugadas: 0</p>
             <p id="dinero-count">dinero: 0</p>
         </div>
 
         <!--eleccion-->
+      
          <div class="apuesta" id="apuesta">
             <input type="text" id="apuest" placeholder="ingrese valor de la apuesta">
         </div>
             <select name="opcion" id="opcion">
                 <option value="">Seleccione el lado de la moneda</option>
                 <option id="lad" value="1">Cara</option>
-                <option id="lad" value="2">Sello</option>
+                <option id="lad" value="0">Sello</option>
             </select>
 
         <div class="buttons">
@@ -48,7 +50,7 @@
                girar moneda
             </button>
             <button id="reinicio-button">
-                Reinicio
+                Terminar partida
             </button>
         </div>
     </div>
