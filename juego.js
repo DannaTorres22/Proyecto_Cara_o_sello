@@ -1,97 +1,70 @@
 let cara = 0;
 let sello = 0;
-const ingresar= document.getElementById('ingresar');
 let cont=0;
-cont=cont+1;
-let total;
-let apuesta=0;
-total=total+apuesta;
+let total=0;
+let totalapuesta=0
 let moneda = document.querySelector(".moneda");
 let girarBtn = document.querySelector("#flip-button");
 let reinicioBtn = document.querySelector("#reinicio-button");
+let apuestaInput = document.querySelector("#apuest");
+let opcionInput = document.querySelector("#opcion");
 
-
-
-
+//hacer girar la moneda
 girarBtn.addEventListener("click", () => {
-    let i = Math.floor(Math.random() * 2);
+    //validacion de campos
+    if(apuestaInput.value !='' && opcionInput.value!=''){
+
+        let i = Math.floor(Math.random() * 2);
+        cont++;
+
     moneda.style.animation = "none";
+    //almacena la opcion del usuario
+    let opcUsuario=parseInt(opcionInput.value)
+    //almacena lo que gano por apuesta
+    let apuestaUsu=parseInt(apuestaInput.value)
+    //total del dinero que aporto
+    totalapuesta+=apuestaUsu;
+
     if(i){
+        moneda.style.animation = "spin-cara 2s forwards";
         setTimeout(function(){
-            moneda.style.animation = "spin-cara 3s forwards";
-        }, 100);
+            if(i===opcUsuario){
+                total+=apuestaUsu*2;
+                swal(`Felicidades, ganaste la moneda cayo en cara. ganaste ${apuestaUsu*2}. en total tienes: ${total}`);
+                
+            } else{
+                total-=apuestaUsu;
+                swal(`lo sentimos, has perdido la moneda cayo en cara. perdiste ${apuestaUsu} en total tienes: ${total}`);
+              
+            }
+        }, 3000);
         cara++;
 
     }
     else{
+        moneda.style.animation = "spin-sello 2s forwards";
         setTimeout(function(){
-            moneda.style.animation = "spin-sello 3s forwards";
-        }, 100);
+            if(i===opcUsuario){
+                total+=apuestaUsu*2;
+                swal(`Felicidades, ganaste la moneda cayo en sello. ganaste ${apuestaUsu*2}. en total tienes: ${total}`);
+               
+            } else{
+                total-=apuestaUsu;
+                swal(`lo sentimos, has perdido la moneda cayo en sello. perdiste ${apuestaUsu} en total tienes: ${total}`);
+                
+            }
+        }, 3000);
         sello++;
     }
     setTimeout(updateStats, 3000);
     disableButton();
-});
-
-
-function updateStats(){
-    document.querySelector("#cara-count").textContent = `cara: ${cara}`;
-    document.querySelector("#sello-count").textContent = `sello: ${sello}`;
-    document.querySelector("#cant-count").textContent = `jugadas: ${cont}`;
-    document.querySelector("#dinero-count").textContent = `dinero: ${total}`;
-   
-}
-
-function disableButton(){
-   girarBtn.disabled = true;
-    setTimeout(function(){
-       girarBtn.disabled = false;
-    },3000);
-}
-
-//reiniciar la partida 
-reinicioBtn.addEventListener("click",() => {
-    moneda.style.animation = "none";
-    cara = 0;
-    sello = 0;
-    cont=0;
-    total=0;
-    
-    updateStats();
-});
-
-girarBtn.addEventListener('click', ()=>{
-    let opcion = document.getElementById('opcion').value;
-    opcion = parseInt(opcion);
-    apuesta = document.getElementById('apuest').value;
-    apuesta = parseInt(apuesta);
-
-    let confir = true;
-    if ( apuesta >= 100 ) {
-        do {
-            switch (opcion) {
-                
-                case 1:
-                    swal(`Tu valor apostado es:`);
-                    
-                    break;
-                case 2:
-                    swal(`Tu valor apostado es:`);
-                    break;
-            
-                default:
-                    break;
-            }
-            confir = window.confirm(`Desea seguir jugando?`);
-        
-        } while (confir == true){
-            swal(`Gracias por jugar`);
-            
-        };
-    
-    } else {
-        swal (`Por favor un valor mayor a 1000 `);
+    }else{
+        swal('selecciona una opcion para jugar y un valor a apostar')
     }
     
-    });
- 
+});
+
+
+   
+        
+    
