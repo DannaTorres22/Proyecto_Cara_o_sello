@@ -12,9 +12,9 @@
       
 </head>
 <body>
-    
 
       <!--contenido-->
+
     <div class="container">
         <div class="moneda" id="moneda">
             <div class="cara">
@@ -24,23 +24,40 @@
                 <img src="../img/sello.png">
             </div>
         </div>
+        <!--contadores-->
          <div class="stats">
              <p id="cara-count">cara: 0</p>
              <p id="sello-count">sello: 0</p>
-
          </div>
+         <div class="stats">
+            <p id="cant-count">jugadas: 0</p>
+            <p id="dinero-count">dinero: 0</p>
+        </div>
+
+        <!--eleccion-->
+      
+         <div class="apuesta" id="apuesta">
+            <input type="text" id="apuest" placeholder="ingrese valor de la apuesta">
+        </div>
+            <select name="opcion" id="opcion">
+                <option value="">Seleccione el lado de la moneda</option>
+                <option id="lad" value="1">Cara</option>
+                <option id="lad" value="0">Sello</option>
+            </select>
+
         <div class="buttons">
             <button id="flip-button">
                girar moneda
             </button>
             <button id="reinicio-button">
-                Reinicio
+                Terminar partida
             </button>
         </div>
     </div>
+    
 
     <script src="../juego.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
 </html>
