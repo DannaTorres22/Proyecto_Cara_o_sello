@@ -139,6 +139,8 @@ transform: rotateX(180deg);
 100%{
     transform: rotateX(2160deg);
 }
+
+
 }
 .buttons{
 display: flex;
@@ -164,4 +166,173 @@ color: #101020;
 #reinicio-button{
 background-color: #020202c9;
 color: white;
+}
+
+@media(min-width : 320px) and (max-width : 500px) {
+
+
+    .container{
+        background: url(../img/banner.png) no-repeat;
+        
+   width: 373px;
+    padding: 35px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    box-shadow: 15px 30px 35px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+    }
+    
+}
+    
+
+
+@media(min-width : 320px) and (max-width : 500px) {
+
+
+    .container{
+        background: url(../img/banner.png) no-repeat;
+        
+   width: 373px;
+    padding: 35px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    box-shadow: 15px 30px 35px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+    }
+    
+    
+    .bannerg {
+        background: url(../img/banner2.png) no-repeat;
+        
+        color:#ffffff;
+        text-align: center;
+        width: 100%;
+    }
+    .bannerg-overlay {
+        
+        padding:195px 0px 170px;
+    }
+    
+    .bannerg h1 {
+            font-size: xxx-large;
+        color:#ffffff;
+    }
+    .bannerg p {
+        margin:15px auto 15px;
+        max-width: 670px
+    }
+    .bannerg-btn {
+        background: #e7e7e7;
+        padding: 12px 58px;
+        font-size: 16px;
+        border-radius: 30px;
+        margin-top: -15px;
+    }
+    .bannerg-btn:hover {
+        background: #ffffff;
+        color:#ab2f52;
+    }
+    
+    .stats{
+        display: flex;
+        color: #ffffff;
+        font-weight: 450;
+        padding: 8px;
+        margin-bottom: 8px;
+        margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0,139,253,0.25);
+    
+    }
+    .stats p:nth-last-child(1){
+    margin-left: 50%;
+    color: white;
+    }
+    
+    .moneda{
+    height: 150px;
+    width: 150px;
+    position: relative;
+    margin: 32px auto;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    }
+    .moneda img{
+    width: 145px;
+    }
+    .cara,.sello{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    }
+    .sello{
+    transform: rotateX(180deg);
+    }
+    #nombre{
+        width: 27%;
+        padding: 11px;
+        margin: 21px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #e7e7e7;
+        border-radius: 50px;
+    }
+    
+    #apuest{
+        width: 100%;
+        padding: 11px;
+        margin: 21px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #e7e7e7;
+        border-radius: 50px;
+    }
+    #opcion {
+        width: 100%;
+        padding: 11px;
+        margin: -7px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #e7e7e7;
+        border-radius: 50px;
+    }
+.buttons{
+display: flex;
+justify-content: space-between;
+}
+button{
+width: 150px;
+padding: 15px 0;
+border: none;
+font-size: 16px;
+border-radius: 5px;
+cursor: pointer;
+}
+#flip-button{
+background-color: rgb(106 0 41);
+color: #ffffff;
+}
+#flip-button:disabled{
+background-color: #e1e0ee;
+border-color: #e1e0ee;
+color: #101020;
+}
+#reinicio-button{
+background-color: #020202c9;
+color: white;
+}
+    
+
+
+
+
 }
