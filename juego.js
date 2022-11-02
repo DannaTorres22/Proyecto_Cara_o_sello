@@ -24,14 +24,17 @@ girarBtn.addEventListener("click", () => {
     let apuestaUsu=parseInt(apuestaInput.value)
     //total del dinero que aporto
     totalapuesta+=apuestaUsu;
-
+    
     if(i){
+        //animacion de la moneda con duracion de 2 segundos
         moneda.style.animation = "spin-cara 2s forwards";
         setTimeout(function(){
+            //si la opcion del usuario es igual al del random
             if(i===opcUsuario){
                 total+=apuestaUsu*2;
                 swal(`Felicidades, ganaste la moneda cayo en cara. ganaste ${apuestaUsu*2}. en total tienes: ${total}`);
                 
+                //sino 
             } else{
                 total-=apuestaUsu;
                 swal(`lo sentimos, has perdido la moneda cayo en cara. perdiste ${apuestaUsu} en total tienes: ${total}`);
@@ -59,11 +62,47 @@ girarBtn.addEventListener("click", () => {
     setTimeout(updateStats, 3000);
     disableButton();
     }else{
-        swal('selecciona una opcion para jugar y un valor a apostar')
+        swal('Selecciona una opcion para jugar y un valor a apostar')
     }
     
 });
 
+
+
+//genera el cambio 
+
+
+function updateStats(){
+    document.querySelector("#cara-count").textContent = `cara: ${cara}`;
+    document.querySelector("#sello-count").textContent = `sello: ${sello}`;
+    document.querySelector("#cant-count").textContent = `jugadas: ${cont}`;
+    document.querySelector("#dinero-count").textContent = `dinero: ${total}`;
+   
+}
+
+function disableButton(){
+   girarBtn.disabled = true;
+    setTimeout(function(){
+       girarBtn.disabled = false;
+    },3000);
+}
+
+//reiniciar la partida 
+reinicioBtn.addEventListener("click",() => {
+    swal(`Resumen de la partida: cantidad de partidas${cont}, dinero acumulado por apuestas: ${totalapuesta} monto final: ${total}`)
+    .then((result) => {
+        
+            window.location.href = "./index.html";
+            
+        
+      })
+      
+    
+})
+
+
+
+ 
 
    
         
